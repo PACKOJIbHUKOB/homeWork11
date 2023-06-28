@@ -4,11 +4,7 @@ public class Main {
     public static void main(String[] args) {   task1();
         task2();
         task3();
-        task4();
-        task5();
-        task6();
-        task7();
-        task8();}
+        }
     public static int checkLeapYear(int year ) {
        if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
            year = 1;
@@ -58,23 +54,28 @@ public class Main {
         } else{
             System.out.println("Ваша операционная система не поддерживаеться");
         }
-
     }
-
+    private static int checkDeliveryDay (int distance){
+        int day = 0;
+        if (distance<20) {
+             day ++;
+        } else if (20<=distance&&distance<60) {
+             day +=2;
+        } else if (60<=distance&&distance<=100) {
+            day +=3;
+        }else {
+            day+=4;
+        }
+        return day;
+    }
     private static void task3() {
-        System.out.println("задача 3");}
-    private static void task4() {
-        System.out.println("задача 4");}
+        System.out.println("задача 3");
+        int deliveryDistance = 60;
+        int deliverydays = checkDeliveryDay(deliveryDistance);
+        if(deliverydays<=3){
+            System.out.println("Потребуется дней: " + (deliverydays));
+        }else {
+            System.out.println("доставки нет");}
 
-    private static void task5() {
-        System.out.println("задача 5");}
-
-    private static void task6() {
-        System.out.println("задача 6");}
-
-    private static void task7() {
-        System.out.println("задача 7");}
-
-    private static void task8() {
-        System.out.println("задача 8");}
+        }
 }
